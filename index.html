@@ -13,6 +13,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Nicholas | Okeke</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .custom-font {
             font-family: 'Roboto', sans-serif;
         }
@@ -21,39 +25,39 @@
             display: none;
         }
 
-        .block{
+        .block {
             display: block;
         }
 
-        /* Keyframes for the animation */
-        @keyframes moveRight {
-            0% {
-                left: 0;
-            }
 
-            100% {
-                left: 50%;
-            }
+        /* active means after it is clicked */
+        .toggle.active .slider {
+            transform: translateX(20px);
         }
 
-        @keyframes moveLeft {
-            0% {
-                left: 50%;
+        .toggle.active {
+            background-color: rgb(100, 100, 172);
+        }
+
+        .form-image{
+            height: 21rem;
+            width: 35rem;
+            opacity: 0.9;
+        }
+
+        .form-image-container{
+            width: 50%;
+        }
+        @media screen and (max-width: 640px) {
+            .form-image{
+                height: 10rem;
             }
-
-            100% {
-                left: 0;
+            .form-image-container{
+                width: 100%;
             }
+            
         }
-
-        /* Add the animation class to the element to animate */
-        .animate-right {
-            animation: moveRight 1s forwards;
-        }
-
-        .animate-left {
-            animation: moveLeft 1s backwards;
-        }
+        
     </style>
 
     </style>
@@ -80,82 +84,91 @@
                 <li class="py-2 pl-3 border-2"><i class="mr-2 fa-solid fa-address-book"></i>CONTACT</li>
             </a>
         </ul>
-        <!-- Toggle -->
-        <div class="mr-4 text-right">
-            <div class="relative inline-block w-10 h-5 bg-gray-400 rounded-full cursor-pointer " onclick=toggle(event)>
-                <input type="checkbox"
-                    class="absolute left-0 w-5 h-5 bg-white rounded-full appearance-none cursor-pointer toggle">
+        <!-- Toggle Mobile screen -->
+        <div class="mr-4 ml-4 text-right">
+            <div class="relative w-10 h-5 bg-gray-300 rounded-full cursor-pointer toggle" onclick="toggleState()">
+                <div
+                    class="w-5 h-5 bg-white rounded-full absolute top-0 left-0 transition-transform duration-300 slider">
+                </div>
             </div>
+
         </div>
     </div>
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full p-2 border-2 shadow-lg bg-bg-gray-200 bg-amber-400">
-        <!-- For small screen -->
-        <nav class="flex justify-between gap-2 pl-3 pr-3">
-            <div class="">
+        <!-- Header for small screen -->
+        <nav class="flex justify-between gap-2 pl-3 pr-3 md:gap-5">
+            <div class="justify-center align-middle md:flex md:items-center">
                 <h1 class="text-lg font-bold tracking-tighter text-black">ODINKS</h1>
             </div>
             <div class="w-7 md:hidden"><img src="./images/bars-solid.svg" alt="hamburger-menu" class="w-full"
                     onclick=openSidebar(event)>
             </div>
-            <!-- For medium and large screen -->
-            <div class="none md:border-black-100 md:block">
-                <ul class="md:gap-12 md:flex">
+            <!-- Header for medium and large screen -->
+            <div id="top" class="none md:border-black-100 md:block">
+                <ul class="text-sm md:flex md:gap-7 md:justify-center md:items-center">
                     <a href="#about">
-                        <li class="py-2 md:pl-3"><i class="mr-2 fa-regular fa-address-card"></i>ABOUT</li>
+                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-regular fa-address-card"></i>ABOUT</li>
                     </a>
                     <a href="#skills">
-                        <li class="py-2 md:pl-3"><i class="mr-2 fa-solid fa-gear"></i>SKILLS</li>
+                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-gear"></i>SKILLS</li>
                     </a>
                     <a href="#projects">
-                        <li class="py-2 md:pl-3"> <i class="mr-2 fa-solid fa-code"></i>PROJECTS</li>
+                        <li class="py-2 md:pl-3 title-texts"> <i class="mr-2 fa-solid fa-code"></i>PROJECTS</li>
                     </a>
                     <a href="https://medium.com/@nicholas.okeke87" target="_blank">
-                        <li class="py-2 md:pl-3"><i class="mr-2 fa-solid fa-newspaper"></i>BLOGS</li>
+                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-newspaper"></i>BLOGS</li>
                     </a>
                     <a href="#contact">
-                        <li class="py-2 md:pl-3"><i class="mr-2 fa-solid fa-address-book"></i>CONTACT</li>
+                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-address-book"></i>CONTACT</li>
                     </a>
-                    <div class="mr-4 text-right">
-                        <div class="relative inline-block w-10 h-5 mt-3 bg-gray-400 rounded-full cursor-pointer "
-                            onclick=toggle(event)>
-                            <input type="checkbox"
-                                class="absolute left-0 w-5 h-5 bg-white rounded-full appearance-none cursor-pointer toggle">
+                    <!-- Toggle button Large Screen -->
+                    <div class="mr-4 md:flex">
+                        <div class="relative w-10 h-5 bg-gray-300 rounded-full cursor-pointer toggle"
+                            onclick="toggleState()">
+                            <div
+                                class="w-5 h-5 bg-white rounded-full absolute top-0 left-0 transition-transform duration-300 slider">
+                            </div>
                         </div>
+
                     </div>
                 </ul>
             </div>
         </nav>
     </header>
     <!-- Main -->
-    <main class="mt-24">
+    <main class="mt-24" id="top">
+        <div class="w-full text-right mb-6">
+            <a href="#bottom" class="text-xl mr-6 font-thin"><i class="fa-regular fa-square-caret-down"></i> <span
+                    class="italic text-sm">Scroll bottom</span></a>
+        </div>
         <!-- Section one -->
         <!-- Container -->
         <section class="flex flex-col justify-around gap-6 px-6 mb-9 md:flex-row">
             <!-- item 1 -->
             <article class="order-2">
-                <p class="text-sm "><em>Hello!</em></p>
+                <p class="text-sm "><em>Hello! 👋</em></p>
                 <p class="text-lg ">I am Nicholas Okeke</p>
                 <p class="text-2xl font-bold">Frontend Web Developer</p>
                 <p class="mb-3 text-2xl font-bold">& Creative Writer</p>
-                <p class="">With a passion for solving problems and creative value through digital means.</p>
+                <p class=""><em>With a passion for solving problems and creating value through digital means.</em></p>
                 <button
                     class="px-3 py-2 mt-4 text-xs font-bold whitespace-pre bg-gray-300 border-black rounded-lg md:bg-gray-500"
                     id="resumebtn">Download<br>Resume</button>
             </article>
             <!-- item 1 -->
-            <div class="self-center md:order-2"><img class="rounded-full w-60" src="./images/Nicholas_Okeke.jpg" ,
+            <div class="self-center md:order-2"><img class="rounded-full w-60 h-60" src="./images/Nicholas_Okeke.jpg" ,
                     alt=""></div>
         </section>
         <!-- Section two- ABOUT -->
-        <section class="w-full px-6 py-5 border-2 rounded bg-slate-200 mb-9">
+        <section class="w-full px-6 py-5 border-2 rounded bg-slate-200 mb-9" id="about">
             <article class="">
-                <h2 id="about" class="py-2 mb-5 font-bold text-center border-2 rounded bg-amber-400">ABOUT ME___</h2>
-                <p>I am an Frontend web developer based in Lagos, Nigeria, who is currently undergoing training at Tiide
-                    Lab, Institute, Abuja Nigeria.
+                <h2 class="py-2 mb-5 font-bold text-center border-2 rounded bg-amber-400 title-texts">ABOUT ME___</h2>
+                <p>I am an Frontend web developer based in Lagos, Nigeria, who is currently undergoing training at
+                    TiideLab, Institute, Abuja Nigeria.
                 </p><br>
                 <p>I am skilled in HTML5, CSS3, JavaScript, and Python, of which is still currently undergoing
-                    development at Tiide Lab.
+                    development at TiideLab.
                 </p><br>
                 <p>My passion for tech was propelled by my love for aesthtics of web apps, arithmetics, my analytical
                     skills, and solving problems.</p>
@@ -172,33 +185,33 @@
             </article>
         </section>
         <!-- Section three- SKILLS -->
-        <section class="p-6 border-2 rounded">
-            <h2 id="skills" class="py-2 mb-3 font-bold text-center rounded bg-amber-400">SKILLS__</h2>
-            <div class="flex-col items-center justify-center md:flex">
+        <section class="p-6 border-2 rounded" id="skills">
+            <h2 class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">SKILLS__</h2>
+            <div class="flex flex-col items-center justify-center">
                 <!-- Item 1 -->
-                <article class="">
+                <article class="mb-1 p-5 md:p-2">
                     <h2 class="mb-3 text-lg font-bold text-center">Why should you hire me?</h2>
                     <p class="mb-5">When building or collaborating on web projects, I strongly adhere to these
                         principles which make my website both unique and scalable</p>
                 </article>
                 <!-- Item 2 -->
-                <article class="flex-col items-center justify-center md:flex">
+                <article class="flex flex-col items-center justify-center md:flex-row md:gap-5 md:px-1 md:py-1">
                     <!-- Item 2a -->
-                    <div class="px-3 py-3 mb-6 border-2 shadow-lg">
+                    <div class="p-3 mb-1 border-2 shadow-lg md:m-0 md:h-64 md:flex-shrink-0 md:w-80">
                         <i class="fa-solid fa-mobile"></i>
                         <h2 class="mt-2 font-bold">Responsive Design</h2>
                         <p>To give users the best feeling of my website on any device, I write code to address
                             responsiveness using the "mobile first" approach and media query.</p>
                     </div>
                     <!-- Item 2b -->
-                    <div class="px-3 py-3 mb-6 border-2 shadow-lg">
+                    <div class="p-3 mb-1 border-2 shadow-lg md:h-64">
                         <i class="fa-solid fa-code"></i>
                         <h2 class="mt-2 font-bold">Clean, Readable and Minimal Code</h2>
-                        <p>I try as much as possible to write clean and readable code that can accessed by any devloper
+                        <p>I try as much as possible to write clean and readable code that can accessed by any developer
                             who intends to contribute to my project.</p>
                     </div>
                     <!-- Item 2c -->
-                    <div class="p-3 mb-6 border-2 shadow-lg">
+                    <div class="p-3 mb-1 border-2 shadow-lg md:h-64">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <h2 class="mt-2 font-bold">Search Engine Optimization (SEO)</h2>
                         <p>I write my code using HTML Semantic Tags to improve site visibility and Google rankings.</p>
@@ -212,10 +225,12 @@
         </section>
         <!-- section four - PROJECTS -->
         <section class="w-full p-6 rounded">
-            <h2 id="projects" class="py-2 mb-3 font-bold text-center rounded bg-amber-400">FEATURED PROJECTS__</h2>
-            <article class="flex-col items-center justify-center border-2">
+            <h2 id="projects" class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">FEATURED
+                PROJECTS__</h2>
+            <article class="flex flex-col items-center justify-center border-2 md:flex-row">
                 <!-- List of project I have done -->
-                <div class="p-2 rounded shadow-lg">
+                <!-- Item 1 -->
+                <div class="p-2 rounded shadow-lg border-2">
                     <div class="mb-2 border-2"><img src="" alt=""></div>
                     <p class="mb-3 font-bold ">Hotel website</p>
                     <p class="mb-3">This is a static clone of a hotel web site. I added my own custom designs and
@@ -229,30 +244,42 @@
             </article>
         </section>
         <!-- section five -->
-        <section class="p-6 mb-12 rounded-md ">
-            <h2 id="contact" class="py-2 mb-3 font-bold text-center rounded bg-amber-400">CONTACT ME</h2>
+        <section class="p-6 mb-6 rounded-md ">
+            <h2 id="contact" class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">CONTACT ME</h2>
             <article class="p-6 border-2 rounded-md shadow-lg">
                 <p>You want to connect with me or collaborate on projects together, you can reach out via the form
                     below, and I will give you a swift response.</p>
-                <!-- Beautiful Image -->
-                <!-- <div><img src="./images/contactme.webp" alt="A friendly Image" class="my-4"></div> -->
-                <form action="" class="w-full p-3 py-4">
-                    <!-- Enter name -->
-                    <input type="text" placeholder="Enter Name"
-                        class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
-                    <input type="text" placeholder="How can I reach You? (LinkedIn username or any other)"
-                        class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
-                    <!-- Message -->
-                    <textarea placeholder="Message" rows="5"
-                        class="w-full px-2 py-2 mb-3 border-2 rounded focus:outline-slate-400"></textarea><br>
-                    <!-- Submit -->
-                    <input type="submit" value="Submit"
-                        class="w-full py-2 font-semibold border-2 rounded-lg bg-amber-400 hover:bg-amber-300 md:w-1/2">
-                </form>
+                <div class="form-section flex flex-col justify-center items-center md:flex-row md:justify-between md:w">
+                    <!-- Beautiful Image -->
+                    <div class="form-image-container mt-3 h-fit">
+                        <img class="form-image rounded-lg"
+                            src="https://images.unsplash.com/photo-1635352722201-658b98c5b501?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                            alt="A friendly Image" class="my-4">
+                    </div>
+                    <div class="w-full md:w-1/2 ">
+                        <form action="" class="w-full p-3 py-4 md:text-center md:mt-3">
+                            <!-- Enter name -->
+                            <input type="text" placeholder="Enter Name"
+                                class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
+                            <input type="text" placeholder="How can I reach You? (LinkedIn username or any other)"
+                                class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
+                            <!-- Message -->
+                            <textarea placeholder="Message" rows="5"
+                                class="w-full px-2 py-2 mb-3 border-2 rounded focus:outline-slate-400"></textarea><br>
+                            <!-- Submit -->
+                            <input type="submit" value="Submit"
+                                class="w-full py-2 font-semibold border-2 rounded-lg bg-amber-400 hover:bg-amber-300 md:w-1/2 title-texts">
+                    </div>
+                    </form>
+                </div>
             </article>
         </section>
     </main>
-    <footer class="p-5 border-t-2 bg-slate-200 md:pb-8" id="footer">
+    <div class="w-full text-right mb-6">
+        <a href="#top" class="text-xl mr-6 font-thin"><i class="fa-regular fa-square-caret-up"></i> <span
+                class="italic text-sm">Scoll Top</span></a>
+    </div>
+    <footer class="p-5 border-t-2 bg-slate-200 md:pb-8" id="footer" id="bottom">
         <div class="flex justify-between px-6 mb-1 md:justify-around md:mb-3">
             <a href="https://www.linkedin.com/in/nicholas-okeke-04477b199" target="_blank"><i
                     class="text-2xl fa-brands fa-linkedin md:text-5xl"></i></a>
@@ -265,63 +292,7 @@
         </div>
         <p class="text-xs text-center md:mt-3">Copyright &copy; Nicholas Okeke 2023, All rights reserved</p>
     </footer>
-    <script>
-        // Toggle
-        //Toggle event listener
-        const toggle = (event) => {
-            event.preventDefault()
-            const toggleCheckbox = document.querySelector('.toggle');
-            if (toggleCheckbox.checked) {
-                // If the checkbox is checked, uncheck it and remove the animation class
-                toggleCheckbox.checked = false;
-                toggleCheckbox.classList.remove('animate-right');
-                toggleCheckbox.classList.add('animate-left')
-
-                document.getElementById('body').style.backgroundColor = 'white'
-                document.getElementById('body').style.color = 'black'
-                document.getElementById('resumebtn').style.backgroundColor = 'white'
-                document.getElementById('resumebtn').style.color = 'black'
-                document.getElementById('sidebar').style.backgroundColor = 'white'
-                document.getElementById('sidebar').style.color = 'black'
-                document.getElementById('footer').style.backgroundColor = 'white'
-                document.getElementById('footer').style.color = 'black'
-                document.getElementById('about').style.backgroundColor = 'white'
-                document.getElementById('about').style.color = 'black'
-
-                // document.getElementsByClassName('black-background').style.backgroundColor = 'white'
-                // document.getElementsByClassName('black-background').style.color = 'black'
-            } else {
-                // If the checkbox is unchecked, check it and add the animation class
-                toggleCheckbox.checked = true;
-                toggleCheckbox.classList.remove('animate-left')
-                toggleCheckbox.classList.add('animate-right');
-
-                document.getElementById('body').style.backgroundColor = 'black'
-                document.getElementById('body').style.color = 'white';
-                document.getElementById('resumebtn').style.color = 'black'
-                document.getElementById('sidebar').style.backgroundColor = 'black'
-                document.getElementById('sidebar').style.color = 'white'
-                document.getElementById('footer').style.backgroundColor = 'black'
-                document.getElementById('footer').style.color = 'white'
-                document.getElementById('about').style.backgroundColor = 'black'
-                document.getElementById('about').style.color = 'white'
-
-
-            }
-
-
-        }
-
-        //Open side bar
-        const openSidebar = (event) => {
-            // event.preventDefault()
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'block'
-        }
-        const closeSidebar = (event) => {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'none'
-        }
+    <script src="./index.js">
     </script>
 </body>
 
