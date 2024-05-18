@@ -39,25 +39,26 @@
             background-color: rgb(100, 100, 172);
         }
 
-        .form-image{
+        .form-image {
             height: 21rem;
             width: 35rem;
             opacity: 0.9;
         }
 
-        .form-image-container{
+        .form-image-container {
             width: 50%;
         }
+
         @media screen and (max-width: 640px) {
-            .form-image{
+            .form-image {
                 height: 10rem;
             }
-            .form-image-container{
+
+            .form-image-container {
                 width: 100%;
             }
-            
+
         }
-        
     </style>
 
 </head>
@@ -147,13 +148,16 @@
             <!-- item 1 -->
             <article class="order-2">
                 <p class="text-sm "><em>Hello! 👋</em></p>
-                <p class="text-lg ">I am Nicholas Okeke</p>
-                <p class="text-2xl font-bold">Frontend Web Developer</p>
-                <p class="mb-3 text-2xl font-bold">& Creative Writer</p>
-                <p class=""><em>With a passion for solving problems and creating value through digital means.</em></p>
+                <p class="text-lg"><span class="text-sm">I am</span> <span class="">Nicholas Okeke</span></p>
+                <p class="font-bold text-3xl">Frontend Web Developer</p>
+                <p class="mb-3 text-3xl font-bold">& Creative Writer</p>
+                <p class="text-sm"><em>With a passion for solving problems and creating value through digital means.</em></p>
                 <button
-                    class="px-3 py-2 mt-4 text-xs font-bold whitespace-pre bg-gray-300 border-black rounded-lg md:bg-gray-500"
-                    id="resumebtn">Download<br>Resume</button>
+                    class="px-3 py-2 mt-4 text-xs font-semibold bg-slate-200 border border-gray-500 rounded-md flex flex-col gap-1 items-center"
+                    id="resumebtn">
+                    <span>Download</span>
+                    <span>Resume</span>
+                </button>
             </article>
             <!-- item 1 -->
             <div class="self-center md:order-2"><img class="rounded-full w-60 h-60" src="./images/Nicholas_Okeke.jpg" ,
@@ -165,7 +169,8 @@
                 <h2 class="py-2 mb-5 font-bold text-center border-2 rounded bg-amber-400 title-texts">ABOUT ME___</h2>
                 <p>I am a Frontend web developer based in Lagos, Nigeria.
                 </p><br>
-                <p>I am skilled in HTML5, CSS3, JavaScript, Python,and ReactJS and is in search of internships where I can gain experience in Frontend web development.
+                <p>I am skilled in HTML5, CSS3, JavaScript, Python,and ReactJS and is in search of internships where I
+                    can gain experience in Frontend web development.
                 </p><br>
                 <p>My passion for tech was propelled by my love for aesthtics of web apps, arithmetics, my analytical
                     skills, and solving problems.</p>
@@ -196,7 +201,7 @@
                 <!-- Item 2 -->
                 <article class="flex flex-col md:flex-row md:gap-5 md:px-1 md:py-1 md:flex-wrap lg:flex-nowrap">
                     <!-- Item 2a -->
-                    <div class="p-3 mb-1 border-2 shadow-lg md:m-0 md:min-h-64 md:w-80 md:w-1/3 lg:w-1/3">
+                    <div class="p-3 mb-1 border-2 shadow-lg md:m-0 md:min-h-64 md:w-1/3 lg:w-1/3">
                         <i class="fa-solid fa-mobile"></i>
                         <h2 class="mt-2 font-bold">Responsive Design</h2>
                         <p>To give users the best feeling of my website on any device, I write code to address
@@ -232,9 +237,12 @@
                 <div class="p-3 mb-1 border-2 shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
                     <div class="mb-2 border-2"><img src="" alt=""></div>
                     <p class="mb-3 font-bold ">INSure</p>
-                    <p class="mb-3 text-sm">An INSurance sales management tool used by insurance agents to manage sales and track leads. Built alongside a team of 11.</p>
-                    <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS, NodeJS and ExpressJS, MySQL, and Sequelize</p>
-                    <a href="https://github.com/TiideLab-Team-Euvola/INSure" target="_blank"><i class="mr-2 fa-brands fa-github"></i></a>
+                    <p class="mb-3 text-sm">An INSurance sales management tool used by insurance agents to manage sales
+                        and track leads. Built alongside a team of 11.</p>
+                    <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS, NodeJS and ExpressJS, MySQL, and
+                        Sequelize</p>
+                    <a href="https://github.com/TiideLab-Team-Euvola/INSure" target="_blank"><i
+                            class="mr-2 fa-brands fa-github"></i></a>
                     <a href="https://insure-react-app-copy.vercel.app/" target="_blank">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
@@ -243,9 +251,11 @@
                 <div class="p-3 mb-1 border-2 shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
                     <div class="mb-2 border-2"><img src="" alt=""></div>
                     <p class="mb-3 font-bold ">Todo Application</p>
-                    <p class="mb-3 text-sm">A simple todo application that can be used to keep track of todos in a day.</p>
+                    <p class="mb-3 text-sm">A simple todo application that can be used to keep track of todos in a day.
+                    </p>
                     <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS and Local storage.</p>
-                    <a href="https://github.com/ODINKS/todo" target="_blank"><i class="mr-2 fa-brands fa-github"></i></a>
+                    <a href="https://github.com/ODINKS/todo" target="_blank"><i
+                            class="mr-2 fa-brands fa-github"></i></a>
                     <a href="https://todo-app-localstorage-rouge.vercel.app/" target="_blank">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
