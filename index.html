@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    > -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/234de0dee3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Nicholas | Okeke</title>
@@ -18,7 +22,10 @@
         }
 
         .custom-font {
-            font-family: 'Roboto', sans-serif;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            /* font-weight: 200; */
+            font-style: normal;
         }
 
         .none {
@@ -63,7 +70,7 @@
 
 </head>
 
-<body class="relative text-sm custom-font md:text-xl body" id="top-most">
+<body class="relative text-base custom-font md:text-xl body" id="top-most">
     <!-- Side menu -->
     <div class="fixed top-0 right-0 z-10 w-3/4 h-full pt-2 pb-5 none sidebar bg-slate-200" id="sidebar">
         <div class="mr-3 text-right" onclick=closeSidebar(event)><i class="text-xl fa-solid fa-xmark"></i></div>
@@ -176,12 +183,12 @@
         </section>
         <!-- Section two -->
         <!-- ABOUT ME -->
-        <section class="w-full py-5 border-2 rounded bg-slate-200" id="about">
+        <section class="p-6 w-full py-5 border-2 rounded bg-slate-200" id="about">
             <article class="">
                 <h2 class="py-2 mb-5 font-bold text-center border-2 rounded bg-amber-400 title-texts">ABOUT ME___</h2>
 
                 <!-- Paragraphs -->
-                <main class="flex flex-col gap-5 text-base px-24">
+                <main class="flex flex-col gap-5 text-base px-20">
                     <p>I am a Frontend web developer based in Lagos, Nigeria.
                     </p>
                     <p>I am skilled in HTML5, CSS3, JavaScript, Python,and ReactJS and is in search of internships where I
@@ -205,9 +212,9 @@
             </article>
         </section>
         <!-- Section three- SKILLS -->
-        <section class="p-6 px-0 border-2 rounded" id="skills text-base">
+        <section class="p-6 w-full border-2 rounded" id="skills text-base">
             <h2 class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">SKILLS__</h2>
-            <div class="flex flex-col items-center justify-center px-24 text-base">
+            <div class="flex flex-col items-center justify-center px-20 text-base">
                 <!-- Item 1 -->
                 <article class="p-5 mb-1 md:p-2">
                     <h2 class="mb-3 text-2xl font-bold text-center">Why should you hire me?</h2>
@@ -218,7 +225,7 @@
                 <!-- Item 2 -->
                 <article class="flex flex-col md:flex-row md:gap-5 md:px-1 md:py-1 md:flex-wrap lg:flex-nowrap">
                     <!-- Item 2a -->
-                    <div class="p-5 hover:shadow-xl hover:border hover:border-slate-100 md:min-h-20 md:w-1/3 lg:w-1/3 bg-slate-100 flex flex-col gap-1.5 hover:bg-inherit">
+                    <div class="p-5 hover:shadow-xl hover:border hover:border-slate-100 bg-slate-100 hover:bg-inherit md:min-h-20 md:w-1/3 lg:w-1/3 flex flex-col gap-1.5 ">
                         <i class="fa-solid fa-mobile"></i>
                         <h2 class="mt-2 font-bold text-lg">Responsive Design</h2>
                         <p>To give users the best feeling of my website on any device, I write code to address
@@ -248,29 +255,34 @@
         <section class="w-full p-6 rounded">
             <h2 id="projects" class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">FEATURED
                 PROJECTS__</h2>
-            <article class="flex flex-col md:flex-row md:gap-5 md:px-1 md:py-1 md:flex-wrap lg:flex-nowrap">
+            <article class="flex flex-col md:flex-row md:gap-5 md:px-20 md:py-1 md:flex-wrap lg:flex-nowrap">
                 <!-- List of project I have done -->
                 <!-- Item 1 -->
-                <div class="p-3 mb-1 border-2 shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
-                    <div class="mb-2 border-2"><img src="" alt=""></div>
+                <div class="p-3 mb-1 hover:border hover:border-slate-100 bg-slate-100 hover:bg-inherit hover:shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
+                    <div class="mb-2">
+                        <img src="./images/insure.jpg" alt="Insure Landing Page." class="w-full h-40">
+                    </div>
                     <p class="mb-3 font-bold ">INSure</p>
                     <p class="mb-3 text-sm">An INSurance sales management tool used by insurance agents to manage sales
                         and track leads. Built alongside a team of 11.</p>
-                    <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS, NodeJS and ExpressJS, MySQL, and
+                    <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS, ExpressJS, MySQL, and
                         Sequelize</p>
                     <a href="https://github.com/TiideLab-Team-Euvola/INSure" target="_blank"><i
-                            class="mr-2 fa-brands fa-github"></i></a>
+                            class="mr-2 fa-brands fa-github"></i>
+                    </a>
                     <a href="https://insure-react-app-copy.vercel.app/" target="_blank">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
                 <!-- Item 2 -->
-                <div class="p-3 mb-1 border-2 shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
-                    <div class="mb-2 border-2"><img src="" alt=""></div>
+                <div class="p-3 mb-1 md:min-h-64 md:w-1/3 lg:w-1/3 hover:border hover:border-slate-100 bg-slate-100 hover:bg-inherit hover:shadow-lg">
+                    <div class="mb-2">
+                        <img src="./images/todo_app.jpg" alt="Image of todo app." class="w-full h-40">
+                    </div>
                     <p class="mb-3 font-bold ">Todo Application</p>
                     <p class="mb-3 text-sm">A simple todo application that can be used to keep track of todos in a day.
                     </p>
-                    <p class="mb-1 text-xs text-red-600">ReactJS, TailwindCSS and Local storage.</p>
+                    <p class="mb-1 text-xs text-red-600">HTML, TailwindCSS and Local storage.</p>
                     <a href="https://github.com/ODINKS/todo" target="_blank"><i
                             class="mr-2 fa-brands fa-github"></i></a>
                     <a href="https://todo-app-localstorage-rouge.vercel.app/" target="_blank">
@@ -278,14 +290,17 @@
                     </a>
                 </div>
                 <!-- Item 3 -->
-                <div class="p-3 mb-1 border-2 shadow-lg md:min-h-64 md:w-1/3 lg:w-1/3">
-                    <div class="mb-2 border-2"><img src="" alt=""></div>
-                    <p class="mb-3 font-bold ">Hotel website</p>
-                    <p class="mb-3 text-sm">A static clone of a hotel web site. I added my own custom designs and
-                        writeups.</p>
-                    <p class="mb-1 text-xs text-red-600">HTML CSS</p>
-                    <a href="https://github.com/ODINKS" target="_blank"><i class="mr-2 fa-brands fa-github"></i></a>
-                    <a href="https://hotel-legacy.vercel.app" target="_blank">
+                <div class="p-3 mb-1 md:min-h-64 md:w-1/3 lg:w-1/3 hover:border hover:border-slate-100 bg-slate-100 hover:bg-inherit hover:shadow-lg">
+                    <div class="mb-2 border-2">
+                        <img src="./images/cover_letter_app.jpg" alt="Image of dashboard of the app" class="w-full h-40">
+                    </div>
+                    <p class="mb-3 font-bold ">Cover Letter Generator</p>
+                    <p class="mb-3 text-sm">A clone of the dashboard and cover letter builder of CV Studio website.</p>
+                    <p class="mb-1 text-xs text-red-600">NextJS, tailwindcss, local storage.</p>
+                    <a href="https://github.com/ODINKS/cover-letter-generator" target="_blank">
+                        <i class="mr-2 fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://cover-letter-generator-app.vercel.app" target="_blank">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
@@ -295,8 +310,10 @@
         <section class="p-6 mb-6 rounded-md ">
             <h2 id="contact" class="py-2 mb-3 font-bold text-center rounded bg-amber-400 title-texts">CONTACT ME</h2>
             <article class="p-6 border-2 rounded-md shadow-lg">
-                <p>You want to connect with me or collaborate on projects together, you can reach out via the form
-                    below, and I will give you a swift response.</p>
+                <p class="text-base text-center font-semibold">
+                    You want to connect with me or collaborate on projects together, you can reach out via the form
+                    below, and I will give you a swift response.
+                </p>
                 <div class="flex flex-col items-center justify-center form-section md:flex-row md:justify-between md:w">
                     <!-- Beautiful Image -->
                     <div class="mt-3 form-image-container h-fit">
@@ -304,21 +321,19 @@
                             src="https://images.unsplash.com/photo-1635972064135-8ec7711f9895?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
                             alt="A friendly Image" class="my-4">
                     </div>
-                    <div class="w-full md:w-1/2 ">
                         <form action="" class="w-full p-3 py-4 md:text-center md:mt-3">
                             <!-- Enter name -->
-                            <input type="text" placeholder="Enter Name"
-                                class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
-                            <input type="text" placeholder="How can I reach You? (LinkedIn username or any other)"
-                                class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400">
+                            <input 
+                            type="text" placeholder="Enter Name" class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400"
+                            >
+                            <input 
+                            type="text" placeholder="How can I reach You? (LinkedIn username or any other)" class="w-full h-10 px-2 mb-4 border-2 rounded focus:outline-slate-400"
+                            >
                             <!-- Message -->
-                            <textarea placeholder="Message" rows="5"
-                                class="w-full px-2 py-2 mb-3 border-2 rounded focus:outline-slate-400"></textarea><br>
+                            <textarea placeholder="Message" rows="5" class="w-full px-2 py-2 mb-3 border-2 rounded focus:outline-slate-400"></textarea><br>
                             <!-- Submit -->
-                            <input type="submit" value="Submit"
-                                class="w-full py-2 font-semibold border-2 rounded-lg bg-amber-400 hover:bg-amber-300 md:w-1/2 title-texts">
-                    </div>
-                    </form>
+                            <input type="submit" value="Submit" class="w-full py-2 font-semibold border-2 rounded-lg bg-amber-400 hover:bg-amber-300 md:w-1/2 title-texts">
+                        </form>
                 </div>
             </article>
         </section>
