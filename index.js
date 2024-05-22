@@ -136,6 +136,4 @@ document.getElementById('contact-form').addEventListener('submit', async functio
             alert('Failed to send message ... please try again')
         }
     }
-
-
 })

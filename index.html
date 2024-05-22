@@ -72,7 +72,7 @@
 
 <body class="relative text-base custom-font md:text-xl body" id="top-most">
     <!-- Side menu -->
-    <div class="fixed top-0 right-0 z-10 w-3/4 h-full pt-2 pb-5 none sidebar bg-slate-200" id="sidebar">
+    <div class="fixed top-0 right-0 z-10 w-full h-full pt-2 pb-5 none sidebar bg-slate-200" id="sidebar">
         <div class="mr-3 text-right" onclick=closeSidebar(event)><i class="text-xl fa-solid fa-xmark"></i></div>
         <ul class="mb-3">
             <a href="#about">
@@ -102,47 +102,61 @@
         </div>
     </div>
     <!-- Header -->
-    <header class="fixed z-30 top-0 left-0 w-full p-2 border-2 shadow-lg bg-bg-gray-200 bg-amber-400">
+    <!-- <header class=""> -->
         <!-- Header for small screen -->
-        <nav class="flex justify-between gap-2 pl-3 pr-3 md:gap-5">
-            <div class="justify-center align-middle md:flex md:items-center">
-                <h1 class="text-lg font-bold italic tracking-tighter text-black">ODINKS</h1>
-            </div>
-            <div class="w-7 md:hidden"><img src="./images/bars-solid.svg" alt="hamburger-menu" class="w-full"
+        <nav id="top" class="fixed z-30 top-0 left-0 shadow-lg bg-amber-400 w-full flex justify-around gap-2 md:gap-5 px-6 py-5">
+            <!-- Logo -->
+            <h1 class="text-lg font-bold italic self-center">ODINKS</h1>
+
+            <div class="w-7 md:hidden">
+                <img src="./images/bars-solid.svg" alt="hamburger-menu" class="w-full"
                     onclick=openSidebar(event)>
             </div>
             <!-- Header for medium and large screen -->
-            <div id="top" class="none md:border-black-100 md:block">
-                <ul class="text-sm md:flex md:gap-7 md:justify-center md:items-center">
+            <ul class="text-sm md:flex md:gap-16 self-center">
+                <li class="title-texts self-center">
                     <a href="#about">
-                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-regular fa-address-card"></i>ABOUT</li>
+                        <i class="mr-2 fa-regular fa-address-card"></i>
+                        <span>ABOUT</span>
                     </a>
+                </li>
+                <li class="title-texts self-center">
                     <a href="#skills">
-                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-gear"></i>SKILLS</li>
+                        <i class="mr-2 fa-solid fa-gear"></i>
+                        <span>SKILLS</span>
                     </a>
+                </li>
+                <li class="title-texts self-center">
                     <a href="#projects">
-                        <li class="py-2 md:pl-3 title-texts"> <i class="mr-2 fa-solid fa-code"></i>PROJECTS</li>
+                        <i class="mr-2 fa-solid fa-code"></i>
+                        <span>PROJECTS</span>
                     </a>
+                </li>
+                <li class="title-texts self-center">
                     <a href="https://medium.com/@nicholas.okeke87" target="_blank">
-                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-newspaper"></i>BLOGS</li>
+                        <i class="mr-2 fa-solid fa-newspaper"></i>
+                        <span>BLOGS</span>
                     </a>
+                </li>
+                <li class="title-texts self-center">
                     <a href="#contact">
-                        <li class="py-2 md:pl-3 title-texts"><i class="mr-2 fa-solid fa-address-book"></i>CONTACT</li>
+                            <i class="mr-2 fa-solid fa-address-book"></i>
+                            <span>CONTACT</span>
                     </a>
-                    <!-- Toggle button Large Screen -->
-                    <div class="mr-4 md:flex">
-                        <div class="relative w-10 h-5 bg-gray-300 rounded-full cursor-pointer toggle"
-                            onclick="toggleState()">
-                            <div
-                                class="absolute top-0 left-0 w-5 h-5 transition-transform duration-300 bg-white rounded-full slider">
-                            </div>
+                </li>
+                <!-- Toggle button Large Screen -->
+                <div class="py-[0.2rem] px-[0.2rem] rounded-full bg-gray-300 toggle">
+                    <div class="relative w-10 h-5  rounded-full cursor-pointer "
+                        onclick="toggleState()">
+                        <div
+                            class="absolute top-0 left-0 w-5 h-5 transition-transform duration-300 bg-white rounded-full slider">
                         </div>
-
                     </div>
-                </ul>
-            </div>
+    
+                </div>
+            </ul>
         </nav>
-    </header>
+    <!-- </header> -->
     <!-- Main -->
     <main class="">
         <!-- Section one -->
@@ -151,7 +165,7 @@
             <button class="absolute right-8 w-fit">
                 <a href="#footer" class="text-xl font-thin flex gap-2">
                     <i class="fa-regular fa-square-caret-down"></i> 
-                    <span class="text-sm italic">
+                    <span class="text-sm italic font-normal">
                         Scroll bottom
                     </span>
                 </a>
@@ -349,7 +363,7 @@
     </main>
     <div class="w-full mb-6 text-right">
         <a href="#top-most" class="mr-6 text-xl font-thin"><i class="fa-regular fa-square-caret-up"></i> <span
-                class="text-sm italic">Scoll Top</span></a>
+                class="text-sm italic font-normal">Scoll Top</span></a>
     </div>
     <footer class="p-5 border-t-2 bg-slate-200 md:pb-8" id="footer">
         <div class="flex justify-between px-6 mb-1 md:justify-around md:mb-3">
