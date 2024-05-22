@@ -58,6 +58,7 @@ const closeSidebar = (event) => {
 }
 
 
+// Download CV
 document.getElementById('resumebtn').addEventListener('click', function () {
     // Create a dummy anchor element
     let downloadLink = document.createElement('a');
@@ -77,3 +78,64 @@ document.getElementById('resumebtn').addEventListener('click', function () {
     // Remove the link from the DOM
     document.body.removeChild(downloadLink);
 });
+
+function resetForm (){
+    const contactForm = document.forms["contact-form"]
+        
+        for (let elementName in contactForm.elements) {
+            const element = contactForm.elements[elementName];
+            // Check if the element has a value property.
+            if (element && element.value !== undefined) {
+                element.value = '';
+            }
+        }
+}
+
+function showLoader(){
+    const loader = document.getElementById('form-loader');
+    const buttonText = document.getElementById('button-submit-text');
+    
+    loader.classList.remove('hidden');
+    loader.classList.add('flex');
+    buttonText.classList.add('hidden');
+}
+
+function hideLoader(){
+    const loader = document.getElementById('form-loader');
+    const buttonText = document.getElementById('button-submit-text');
+    
+    loader.classList.remove('flex');
+    loader.classList.add('hidden');
+    buttonText.classList.remove('hidden');
+}
+
+// Contact form
+document.getElementById('contact-form').addEventListener('submit', async function (event) {
+    try{
+        event.preventDefault();
+        showLoader()
+
+        const result = await emailjs.sendForm('nicholas_okeke', 'portfolio_website', this)
+
+        setTimeout(() =>{
+            hideLoader()
+            if(result){
+                console.log("SUCCESSFUL!");
+                alert('Message sent successfully!')
+            }else{
+                throw new Error()
+            }
+            
+            resetForm()
+        }, 3000)
+        
+        
+    }catch(error){
+        console.log('Error message', error);
+        if(error){
+            alert('Failed to send message ... please try again')
+        }
+    }
+
+
+})
